@@ -33,8 +33,8 @@ import helpers
 verbose = False
 totalPoints = 0
 
-SCRIPT_VERSION = "3.8.2"
-SCRIPT_DATE = "October 28, 2014"
+SCRIPT_VERSION = "3.8.3"
+SCRIPT_DATE = "January 05, 2015"
 
 def earnRewards(config, httpHeaders, userAgents, reportItem, password):
     """Earns Bing! reward points and populates reportItem"""
@@ -223,8 +223,7 @@ def __run(config):
         report.append(reportItem)
         doSleep = True
 
-    EventsProcessor.onScriptComplete(config)
-
+    
     #
     # trigger full report if needed
     #
@@ -248,6 +247,8 @@ def __run(config):
     print "Total points earned: %d" % totalPoints
     print
     print "%s - script ended" % helpers.getLoggingTime()
+    
+    EventsProcessor.onScriptComplete(config)
 
 if __name__ == "__main__":
     try:
